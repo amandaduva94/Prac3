@@ -35,6 +35,7 @@
 			var x = document.getElementById("latitude");
 			var y = document.getElementById("longitude");
 			
+			
 			function getLocation() {
 				if (navigator.geolocation) {
 					navigator.geolocation.getCurrentPosition(showPosition);
@@ -43,8 +44,10 @@
 				}
 			}
 			function showPosition(position) {
-				x.innerHTML = "Latitude: " + position.coords.latitude; 
-				y.innerHTML = "Longitude: " + position.coords.longitude; 
+				var latitude = position.coords.latitude;
+				var longitude = position.coords.longitude;
+				x.innerHTML = "Latitude: " + latitude.toFixed(5); 
+				y.innerHTML = "Longitude: " + longitude.toFixed(5); 
 			}
 </script>
 	</body>
